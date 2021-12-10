@@ -1,8 +1,17 @@
 
 export const initialState = {
+    data: {},
+    loading: false,
+    error: ''
 }
 
-const reducer = ()=>{
+export const reducer = (state = initialState, action)=>{
+    switch(action.type) {
+
+
+        default:
+                return state;
+    }
 }
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
