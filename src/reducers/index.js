@@ -5,7 +5,7 @@ import { FETCH_ERROR} from "../actions";
 import { ADD_SMURF } from "../actions";
 
 export const initialState = {
-    data: [],
+    smurfs: [],
     loading: false,
     error: ''
 }
@@ -21,7 +21,7 @@ const reducer = (state = initialState, action)=>{
             return {
                 ...state,
                 loading: false,
-                data: action.payload,
+                smurfs: action.payload,
             };
         case ERROR:
             return {
@@ -34,13 +34,13 @@ const reducer = (state = initialState, action)=>{
             return {
                 ...state,
                 loading: false,
-                data: action.payload
+                smurfs: action.payload
             }
         
         case ADD_SMURF:
             return {
                 ...state,
-                data: [...state.data, action.payload]
+                smurfs: [...state.smurfs, action.payload]
             }
 
         default:

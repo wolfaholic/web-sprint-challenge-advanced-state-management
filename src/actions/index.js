@@ -7,15 +7,15 @@ export const FETCH_ERROR = "FETCH_ERROR"
 export const ADD_SMURF = "ADD_SMURF"
 
 
-export const fetchSmurfs = (searchQuery) => (dispatch) => {
+export const fetchSmurfs = () => (dispatch) => {
     dispatch({ type: LOADING });
 
     axios
-    .get(`http://localhost:3333/smurfs=${searchQuery}`)
+    .get(`http://localhost:3333/smurfs`)
     .then((res) => {
         dispatch({type: SUCCESS, payload: res.data})
     })
-    .catch((err) => dispatch({type: FETCH_ERROR, payload: err.message}));
+    .catch((err) => dispatch({type: FETCH_ERROR, payload: err.data}));
 };
 export const addNewSmurf = (Name, Position, Nickname, Summary) => {
     return {
