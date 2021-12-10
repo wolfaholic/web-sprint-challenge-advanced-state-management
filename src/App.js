@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
@@ -9,11 +9,10 @@ import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import mapStateToProps from 'react-redux';
+import { fetchSmurfs } from './actions'
 
 const App = (props)=> {
 
-  console.log(props);
-  
   return (
     <div className="App">
       <Header />
@@ -30,7 +29,7 @@ const mapState = (state) => {
   return state
 }
 
-export default connect(mapState)(App);
+export default connect(mapState,{ fetchSmurfs })(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
