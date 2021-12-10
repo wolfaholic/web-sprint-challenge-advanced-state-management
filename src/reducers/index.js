@@ -1,13 +1,47 @@
+import { LOADING } from "../actions";
+import { SUCCESS } from "../actions";
+import { ERROR } from "../actions";
+import { FETCH_ERROR} from "../actions";
+import { ADD_SMURF } from "../actions";
 
 export const initialState = {
-    data: {},
+    data: [],
     loading: false,
     error: ''
 }
 
-export const reducer = (state = initialState, action)=>{
+const reducer = (state = initialState, action)=>{
     switch(action.type) {
-
+        case LOADING:
+            return {
+                ...state,
+                loading: true,
+            };
+        case SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                data: action.payload,
+            };
+        case ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            }
+        
+        case FETCH_ERROR:
+            return {
+                ...state,
+                loading: false,
+                data: action.payload
+            }
+        
+        case ADD_SMURF:
+            return {
+                ...state,
+                data: [...state.data, action.payload]
+            }
 
         default:
                 return state;
