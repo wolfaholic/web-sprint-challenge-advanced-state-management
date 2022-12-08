@@ -10,7 +10,7 @@ This is an individual assessment. All work must be your own. All projects will b
 
 You are not allowed to collaborate during the sprint challenge. 
 
-## Introduction
+## Introduction ~
 
 In this challenge, you will build a Smurfs village database utilizing Redux as your state management system. Build this challenge from the ground up using what you have learned about state management.
 
